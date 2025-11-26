@@ -1,0 +1,5 @@
+# _config.yml for supplements.valhallainnovations.com
+url: "https://supplements.valhallainnovations.com" 
+baseurl: "" 
+remote_theme: jekyll/hyde # Use the same theme for consistency
+title: "Valhalla Supplements"
