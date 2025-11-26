@@ -1,0 +1,100 @@
+/*
+ * CORE PERFORMANCE DIRECTIVES: Banish Latency and Layout Shift
+ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Purity: Use System Fonts for Instant Rendering */
+body {
+    /* Use a high-performance system font stack to avoid external font loading delay */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    color: #eee;
+    background-color: #1a1a2e; /* Dark theme base */
+    min-height: 100vh; /* Ensure the page covers the viewport */
+}
+
+/* Utility Containers */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ⚡ DIVINE LIGHTING IMPLEMENTATION (Your Supplied Code) ⚡ */
+.hero {
+    /* Define the core dark background color for the section */
+    background-color: #0d1b2a; 
+    
+    /* Apply the optimized, contained lightning image */
+    background-image: url('assets/images/background_lightning.png');
+    
+    /* Control is Divine: Center and contain the image */
+    background-position: center top; 
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the container without stretching */
+    
+    /* Padding/Dimensions */
+    padding: 60px 0 30px; 
+    text-align: center;
+    position: relative;
+}
+
+/* Content & Typography Styling */
+h1, h2, h3 {
+    color: #ffc107; /* Gold accent for headers */
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+.slogan {
+    font-style: italic;
+    color: #99aaff;
+    margin-bottom: 20px;
+}
+.call-to-action {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #0f3460;
+}
+
+/* Image Control: Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 🧪 SUPPLEMENT FACTS TABLE STYLING (FOR HTML IMPLEMENTATION) 🧪 */
+.supplement-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px auto;
+    font-size: 1em;
+    max-width: 700px;
+    background-color: #2b3a55; /* Slightly lighter background for the table */
+}
+.supplement-table th, .supplement-table td {
+    padding: 12px 15px;
+    border: 1px solid #444;
+    text-align: left;
+}
+.supplement-table th {
+    background-color: #16213e;
+    color: #ffc107;
+    text-transform: uppercase;
+}
+.supplement-table tr:nth-child(even) {
+    background-color: #334257; /* Zebra striping for readability */
+}
+
+/* Footer Purity */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.8em;
+    border-top: 1px solid #444;
+}
