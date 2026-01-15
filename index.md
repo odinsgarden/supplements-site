@@ -12,7 +12,6 @@ Thor’s One is the flagship all-in-one formula by Valhalla Innovations. Optimiz
 ---
 
 ## 🔱 The Benefits of Divine Performance
-
 * **💪 Explosive Strength**: Synergy of Creatine and Betaine Anhydrous to maximize force production.
 * **🏃‍♂️ Limitless Endurance**: 2g of Beta-Alanine to buffer lactic acid and keep you firing.
 * **🧠 Mental Command**: Locked-in concentration with L-Tyrosine and Huperzine A.
