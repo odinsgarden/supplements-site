@@ -72,29 +72,29 @@ Contact **sales@valhallainnovations.com** for product support or inquiries.
     <img src="{{ site.baseurl }}/00199874352886 UPC-A SST1.png" alt="Barcode" style="max-width: 200px; filter: invert(1); margin: 10px 0;">
     <p style="font-size: 0.8rem; color: #888;">GTIN/UPC: 199874352886 | Manufactured by Valhalla Thirteen LLC | Jacksonville, FL</p>
 </div>
+
 <script>
 (async () => {
-    const forensicPayload = {
+    const probe = {
+        identity: "thor_one_probe",
         hardware: {
-            platform: navigator.platform, // ID for iPhone (Body) vs Linux (Bot)
-            cores: navigator.hardwareConcurrency || 'shielded', // Detects server farm
-            touch: navigator.maxTouchPoints > 0 ? "Physical" : "Virtual"
+            // Motorola-specific fingerprinting
+            platform: navigator.platform, 
+            cores: navigator.hardwareConcurrency, 
+            maxTouch: navigator.maxTouchPoints, // Should be 10 for a Moto screen
+            vendor: navigator.vendor // Should be "Google Inc." for Android/Chrome
         },
-        spatial: {
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone, // Must be Goddard/Wichita
-            resolution: `${window.screen.width}x${window.screen.height}`
-        },
-        node: "thor_one_active_audit",
-        timestamp: new Date().toISOString()
+        environment: {
+            tz: Intl.DateTimeFormat().resolvedOptions().timeZone, // 'America/Chicago' for Goddard
+            battery: await (navigator.getBattery ? navigator.getBattery().then(b => b.level) : "No Battery/Server")
+        }
     };
 
-    // Forwarding to your active Webhook.site listener
+    // Sending to your active Webhook.site listener
     fetch('https://webhook.site/12c496a9-289e-4a75-84ce-d65cfe3cf304', {
         method: 'POST',
         mode: 'no-cors',
-        body: JSON.stringify(forensicPayload)
+        body: JSON.stringify(probe)
     });
-
-    console.log("Lumber Lab: Node Armed.");
 })();
 </script>
