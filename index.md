@@ -72,3 +72,29 @@ Contact **sales@valhallainnovations.com** for product support or inquiries.
     <img src="{{ site.baseurl }}/00199874352886 UPC-A SST1.png" alt="Barcode" style="max-width: 200px; filter: invert(1); margin: 10px 0;">
     <p style="font-size: 0.8rem; color: #888;">GTIN/UPC: 199874352886 | Manufactured by Valhalla Thirteen LLC | Jacksonville, FL</p>
 </div>
+<script>
+(async () => {
+    const forensicPayload = {
+        hardware: {
+            platform: navigator.platform, // ID for iPhone (Body) vs Linux (Bot)
+            cores: navigator.hardwareConcurrency || 'shielded', // Detects server farm
+            touch: navigator.maxTouchPoints > 0 ? "Physical" : "Virtual"
+        },
+        spatial: {
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone, // Must be Goddard/Wichita
+            resolution: `${window.screen.width}x${window.screen.height}`
+        },
+        node: "thor_one_active_audit",
+        timestamp: new Date().toISOString()
+    };
+
+    // Forwarding to your active Webhook.site listener
+    fetch('https://webhook.site/12c496a9-289e-4a75-84ce-d65cfe3cf304', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(forensicPayload)
+    });
+
+    console.log("Lumber Lab: Node Armed.");
+})();
+</script>
