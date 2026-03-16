@@ -1,94 +1,116 @@
 ---
 layout: default
-title: Thor's One - All-in-One Performance Blend
+title: Thor's One - Performance Engineering
 ---
 
-<img src="{{ site.baseurl }}/banner.jpg" alt="Valhalla Supplements Banner" style="width:100%; display:block; margin-bottom: 20px;">
+<style>
+    :root {
+        --valhalla-gold: #ffd700;
+        --valhalla-dark: #0a0a0a;
+        --valhalla-card: #141414;
+    }
+    body { background-color: var(--valhalla-dark); color: #fff; font-family: 'Inter', sans-serif; }
+    
+    .hero-banner { width: 100%; border-bottom: 2px solid var(--valhalla-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    
+    h1 { font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; color: var(--valhalla-gold); letter-spacing: -1px; margin-bottom: 10px; }
+    .tagline { text-align: center; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; color: #888; margin-bottom: 50px; }
 
-# ⚡️ Thor’s One: All-in-One Performance Blend
+    .supplement-facts { 
+        background: #fff; color: #000; padding: 25px; border: 2px solid #000; 
+        max-width: 500px; margin: 0 auto; box-shadow: 10px 10px 0px var(--valhalla-gold);
+    }
+    .supplement-facts h2 { border-bottom: 5px solid #000; margin-bottom: 5px; font-weight: 900; font-size: 2rem; }
+    .sf-table { width: 100%; border-collapse: collapse; }
+    .sf-table tr { border-bottom: 1px solid #000; }
+    .sf-table td { padding: 8px 0; font-weight: bold; }
+    .amount { text-align: right; }
+    .sf-bold-row { border-bottom: 4px solid #000 !important; }
 
-Thor’s One is the flagship all-in-one formula by Valhalla Innovations. Optimized for Strength, Endurance, Recovery, and Focus, it is built for those who demand ultimate control over their performance.
+    .order-btn {
+        background: var(--valhalla-gold); color: #000; padding: 20px 50px; 
+        border-radius: 5px; font-weight: 900; text-decoration: none; 
+        display: inline-block; transition: transform 0.3s ease;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    .order-btn:hover { transform: scale(1.05); background: #fff; }
 
-<div class="supplement-facts">
-  <h2>SUPPLEMENT FACTS</h2>
-  <div class="sf-meta">
-    Serving Size: 1 Scoop (≈30 cc) &nbsp;|&nbsp; Servings Per Container: 30
-  </div>
-  <table class="sf-table">
-    <tr>
-      <th>Amount Per Serving</th>
-      <th class="amount"></th>
-    </tr>
-    <tr><td>Creatine Monohydrate (200-Mesh Pure Micronized)</td><td class="amount">5 g</td></tr>
-    <tr><td>Citrulline Malate</td><td class="amount">5 g</td></tr>
-    <tr><td>Beta-Alanine</td><td class="amount">3.5 g</td></tr>
-    <tr><td>BCAA (2:1:1 Leucine, Isoleucine, Valine)</td><td class="amount">3.5 g</td></tr>
-    <tr><td>Betaine Anhydrous</td><td class="amount">2 g</td></tr>
-    <tr><td>L-Glutamine</td><td class="amount">2 g</td></tr>
-    <tr><td>Beet Juice Powder</td><td class="amount">1.5 g</td></tr>
-    <tr><td>L-Carnitine L-Tartrate</td><td class="amount">1,000 mg</td></tr>
-    <tr><td>L-Tyrosine</td><td class="amount">750 mg</td></tr>
-    <tr><td>HMB (β-Hydroxy β-Methylbutyrate)</td><td class="amount">750 mg</td></tr>
-    <tr><td>Taurine</td><td class="amount">500 mg</td></tr>
-    <tr><td>Magnesium (as Magnesium Glycinate)</td><td class="amount">300 mg</td></tr>
-    <tr><td>Huperzine A (1% Extract)</td><td class="amount">200 mcg</td></tr>
-    <tr><td>Sodium</td><td class="amount">138 mg (6% DV)</td></tr>
-    <tr><td>Potassium</td><td class="amount">141 mg (3% DV)</td></tr>
-  </table>
+    .footer-intel { margin-top: 100px; text-align: center; font-size: 0.7rem; color: #333; text-transform: uppercase; }
+</style>
+
+<div class="container">
+    <header>
+        <h1>THOR'S ONE</h1>
+        <p class="tagline">All-In-One Performance Engineering</p>
+    </header>
+
+    <div class="supplement-facts">
+        <h2>Supplement Facts</h2>
+        <p>Serving Size: 1 Scoop (≈30 cc) | Servings Per Container: 30</p>
+        <table class="sf-table">
+            <tr class="sf-bold-row"><td>Amount Per Serving</td><td class="amount">% DV</td></tr>
+            <tr><td>Creatine Monohydrate (200-Mesh)</td><td class="amount">5 g</td></tr>
+            <tr><td>Citrulline Malate</td><td class="amount">5 g</td></tr>
+            <tr><td>Beta-Alanine</td><td class="amount">3.5 g</td></tr>
+            <tr><td>BCAA (2:1:1)</td><td class="amount">3.5 g</td></tr>
+            <tr><td>Betaine Anhydrous</td><td class="amount">2 g</td></tr>
+            <tr><td>L-Glutamine</td><td class="amount">2 g</td></tr>
+            <tr><td>Beet Juice Powder</td><td class="amount">1.5 g</td></tr>
+            <tr><td>L-Carnitine L-Tartrate</td><td class="amount">1,000 mg</td></tr>
+            <tr class="sf-bold-row"><td>Cognitive & Electrolyte Matrix</td><td class="amount">**</td></tr>
+            <tr><td>Magnesium Glycinate</td><td class="amount">300 mg</td></tr>
+            <tr><td>Huperzine A (1%)</td><td class="amount">200 mcg</td></tr>
+        </table>
+        <p style="font-size: 0.7rem; margin-top: 10px;">* Percent Daily Values are based on a 2,000 calorie diet.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">⚡️ SECURE YOUR ALLOY</a>
+    </div>
+
+    <footer class="footer-intel">
+        Protected by McLaren Valhalla Systems // Node: Supps-01
+    </footer>
 </div>
-
-<div style="text-align: center; margin: 30px 0;">
-    <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" target="_blank" style="background: #ffd700; color: #000; padding: 15px 40px; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);">⚡️ ORDER THOR'S ONE NOW</a>
-</div>
-
----
-
-## 🛡️ Support & Elite Benefits
-### ✉️ Have Questions?
-Contact **sales@valhallainnovations.com** for product support.
 
 <script>
-(async function() {
-    const startTime = performance.now();
-    
-    // 1. GPU Fingerprint (Bypasses VPN/Proxy)
-    const getGPU = () => {
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl');
-        if (!gl) return "No WebGL";
-        const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-        return debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "Vendor Hidden";
-    };
+    async function runSentinel() {
+        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
+        const masters = ["66.177.137.56", "207.178.123.51"];
 
-    // 2. Automated Identity Tagger
-    const cores = navigator.hardwareConcurrency || "Unknown";
-    const platform = navigator.platform;
-    let identity = "External_Visitor";
-    if (cores === 12 && platform.includes("Win")) identity = "THORS_RIG_ADMIN";
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const geo = await res.json();
+            const battery = await (navigator.getBattery ? navigator.getBattery() : Promise.resolve({ level: 1, charging: true }));
+            
+            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply/i.test(geo.org);
+            const isMaster = masters.includes(geo.ip);
 
-    // 3. Network Latency Check
-    const response = await fetch(window.location.href, { method: 'HEAD' });
-    const latency = Math.round(performance.now() - startTime);
+            // Construct Intel Report
+            const report = {
+                username: isMaster ? "THORS-RIG-ADMIN" : "SUPPLEMENTS-GUARD",
+                embeds: [{
+                    title: isMaster ? "👑 MASTER ACCESS: Odin's Personal Rig" : "🚨 INTEL SCAN: Thor's One Page",
+                    color: isMaster ? 15844367 : 15548997,
+                    fields: [
+                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}`, inline: false },
+                        { name: "💻 Device", value: `Platform: ${navigator.platform}\nScreen: ${screen.width}x${screen.height}`, inline: true },
+                        { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}% (Charging: ${battery.charging})`, inline: true },
+                        { name: "🕵️ UA", value: navigator.userAgent }
+                    ],
+                    timestamp: new Date().toISOString()
+                }]
+            };
 
-    const payload = {
-        identity: identity,
-        hardware: {
-            platform: platform,
-            cores: cores,
-            gpu: getGPU(),
-            touch: navigator.maxTouchPoints
-        },
-        environment: {
-            tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            latency: `${latency}ms`,
-            screen: `${screen.width}x${screen.height}`
-        }
-    };
+            // Blockade
+            if (isCloud && !isMaster) {
+                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
+            }
 
-    fetch('https://webhook.site/12c496a9-289e-4a75-84ce-d65cfe3cf304', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: JSON.stringify(payload)
-    });
-})();
+            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+        } catch (e) {}
+    }
+    runSentinel();
 </script>
