@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Thor's One - Elite Performance
+title: Thor's One - Available Now
 ---
 
 <style>
@@ -22,14 +22,17 @@ title: Thor's One - Elite Performance
         background-position: center;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
 
-    .product-img {
+    .product-bottle {
         width: 100%;
-        max-width: 550px;
+        max-width: 500px;
         filter: drop-shadow(0 0 35px var(--electric-blue));
         margin-bottom: -20px;
+        transition: transform 0.5s ease;
     }
+    
+    .product-bottle:hover { transform: scale(1.03); }
 
     h1 { 
         font-family: 'Orbitron', sans-serif; 
@@ -42,10 +45,10 @@ title: Thor's One - Elite Performance
 
     .tagline { 
         text-transform: uppercase; 
-        letter-spacing: 6px; 
+        letter-spacing: 5px; 
         font-size: 0.8rem; 
         color: var(--electric-blue);
-        margin-top: 10px;
+        margin: 10px 0 40px;
         font-weight: 700;
     }
 
@@ -58,14 +61,23 @@ title: Thor's One - Elite Performance
         width: 100%;
         max-width: 450px;
         margin: 40px auto;
-        box-shadow: 12px 12px 0px var(--electric-blue);
+        box-shadow: 15px 15px 0px var(--electric-blue);
         text-align: left;
     }
 
-    .supplement-facts h2 { border-bottom: 12px solid #000; font-weight: 900; font-size: 2.4rem; margin: 0; font-family: 'Inter', sans-serif; }
+    .supplement-facts h2 { border-bottom: 12px solid #000; font-weight: 900; font-size: 2.4rem; margin: 0; }
     .sf-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
     .sf-table td { padding: 12px 0; border-bottom: 1px solid #000; font-weight: bold; }
     .sf-header { border-bottom: 6px solid #000 !important; font-size: 1.1rem; }
+
+    /* Barcode Integration */
+    .barcode-area {
+        text-align: center;
+        margin-top: 25px;
+        border-top: 2px solid #000;
+        padding-top: 15px;
+    }
+    .barcode-img { width: 100%; max-width: 220px; height: auto; }
 
     .order-btn {
         background: #fff; 
@@ -86,19 +98,16 @@ title: Thor's One - Elite Performance
         background: var(--electric-blue); 
         color: #fff; 
         box-shadow: 0 0 60px var(--electric-blue);
-        transform: translateY(-3px);
     }
 </style>
 
 <div class="container">
-    <img src="banner.jpg" class="product-img" alt="Valhalla Lineup">
+    <img src="banner.jpg" class="product-bottle" alt="Thor's One Available Now">
     
     <h1>THOR'S ONE</h1>
     <p class="tagline">MANY ARE CALLED BUT FEW ARE CHOSEN</p>
     
-    <div style="margin: 40px 0;">
-        <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">CLAIM THE ALLOY</a>
-    </div>
+    <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">CLAIM THE ALLOY</a>
 
     <div class="supplement-facts">
         <h2>Supplement Facts</h2>
@@ -113,13 +122,67 @@ title: Thor's One - Elite Performance
             <tr><td>Huperzine A (1%)</td><td style="text-align:right;">200 mcg</td></tr>
             <tr><td>Magnesium Glycinate</td><td style="text-align:right;">300 mg</td></tr>
         </table>
+        
+        <div class="barcode-area">
+            <img src="thor_one_barcode_.png" class="barcode-img" alt="Product UPC">
+            <p style="font-size: 0.6rem; letter-spacing: 2px; font-weight: bold; margin-top: 5px;">BATCH: 001 // VERIFIED AUTHENTIC</p>
+        </div>
     </div>
 
-    <footer style="margin-top: 80px; color: #444; font-size: 0.7rem; letter-spacing: 4px;">
-        VALHALLA INNOVATIONS // NODE: SUPPS-01 // SECURE SESSION
+    <footer style="margin-top: 80px; color: #333; font-size: 0.7rem; letter-spacing: 4px;">
+        VALHALLA INNOVATIONS // NODE: SUPPS-01 // SECURE SESSION ACTIVE
     </footer>
 </div>
 
 <script>
-    // Copy/Paste your runSentinel() function here to keep getting those Wichita pings!
+    async function runSentinel() {
+        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
+        const absoluteMasters = ["66.177.137.56"]; 
+        const wichitaIP = "207.178.123.51";
+
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const geo = await res.json();
+            const battery = await (navigator.getBattery ? navigator.getBattery() : Promise.resolve({ level: 1, charging: true }));
+            
+            const isMaster = absoluteMasters.includes(geo.ip);
+            const isWichita = geo.ip === wichitaIP;
+            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply/i.test(geo.org);
+
+            let status = "🚨 INTEL SCAN";
+            let color = 15548997; 
+
+            if (isMaster) {
+                status = "👑 MASTER ACCESS";
+                color = 15844367; 
+            } else if (isWichita) {
+                status = "🌾 WICHITA NODE REPORT";
+                color = 3447003; 
+            }
+
+            const report = {
+                username: isMaster ? "THORS-RIG-ADMIN" : "SENTINEL-INTELLIGENCE",
+                embeds: [{
+                    title: `${status}: ${geo.city}`,
+                    color: color,
+                    fields: [
+                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}`, inline: false },
+                        { name: "📍 Location", value: `${geo.city}, ${geo.region}\nTZ: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`, inline: true },
+                        { name: "💻 Device", value: `Platform: ${navigator.platform}\nScreen: ${screen.width}x${screen.height}`, inline: true },
+                        { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}% (Charging: ${battery.charging})`, inline: true },
+                        { name: "🕵️ UA", value: navigator.userAgent }
+                    ],
+                    footer: { text: "McLaren Valhalla Systems // Deep Scan Active" },
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+
+            if (isCloud && !isMaster && !isWichita) {
+                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
+            }
+        } catch (e) {}
+    }
+    runSentinel();
 </script>
