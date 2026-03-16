@@ -3,6 +3,35 @@ layout: default
 title: Thor's One - Valhalla Innovations
 ---
 
+<div class="container">
+    <div style="margin-bottom: 60px; position: relative;">
+        <img src="banner_lineup.jpg" style="width: 100%; max-width: 900px; border-radius: 10px; filter: drop-shadow(0 0 20px rgba(0,212,255,0.2));" alt="Valhalla Innovations Lineup">
+        <div style="margin-top: -20px;">
+            <span style="background: var(--electric-blue); color: #000; padding: 5px 20px; font-weight: 900; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px;">
+                Future Deployments Incoming
+            </span>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="status-badge">Available</div>
+            <img src="banner.jpg" class="product-img" alt="Thor's One">
+            <h3 class="product-title">THOR'S ONE</h3>
+            <p style="color: #888; font-size: 0.8rem;">Performance Alloy // Batch 001</p>
+            <a href="thors-one" class="btn">Access Alloy</a>
+        </div>
+        
+        <div class="product-card locked">
+            <div class="status-badge soon">Locked</div>
+            <img src="banner.jpg" class="product-img" style="filter: grayscale(1) opacity(0.3);" alt="Strength Surge">
+            <h3 class="product-title">STRENGTH SURGE</h3>
+            <p style="color: #444; font-size: 0.8rem;">Status: In Forge</p>
+            <button class="btn" style="border-color: #333; color: #333; cursor: not-allowed;">Encrypted</button>
+        </div>
+    </div>
+</div>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;700&display=swap');
 
