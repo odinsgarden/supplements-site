@@ -24,7 +24,6 @@ title: Thor's One - Available Now
 
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
 
-    /* The Jug Showcase */
     .product-bottle {
         width: 100%;
         max-width: 500px;
@@ -53,7 +52,6 @@ title: Thor's One - Available Now
         font-weight: 700;
     }
 
-    /* Supplement Facts UI - POPULATED */
     .supplement-facts { 
         background: #fff; 
         color: #000; 
@@ -71,7 +69,6 @@ title: Thor's One - Available Now
     .sf-table td { padding: 12px 0; border-bottom: 1px solid #000; font-weight: bold; }
     .sf-header { border-bottom: 6px solid #000 !important; font-size: 1.1rem; }
 
-    /* Barcode Integration */
     .barcode-area {
         text-align: center;
         margin-top: 25px;
@@ -80,7 +77,6 @@ title: Thor's One - Available Now
     }
     .barcode-img { width: 100%; max-width: 220px; height: auto; }
 
-    /* PayPal Integration Button */
     .order-btn {
         background: #fff; 
         color: #000; 
@@ -94,14 +90,9 @@ title: Thor's One - Available Now
         border: 4px solid var(--electric-blue);
         transition: 0.3s;
         box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
-        cursor: pointer;
     }
 
-    .order-btn:hover { 
-        background: var(--electric-blue); 
-        color: #fff; 
-        box-shadow: 0 0 60px var(--electric-blue);
-    }
+    .order-btn:hover { background: var(--electric-blue); color: #fff; box-shadow: 0 0 60px var(--electric-blue); }
 
     footer { margin-top: 80px; color: #333; font-size: 0.7rem; letter-spacing: 4px; font-weight: bold; }
 </style>
@@ -131,14 +122,12 @@ title: Thor's One - Available Now
         </table>
         
         <div class="barcode-area">
-            <img src="thor_one_barcode_.jpeg" class="barcode-img" alt="Product UPC">
+            <img src="thor_one_barcode_jpeg.jpg" class="barcode-img" alt="Product UPC">
             <p style="font-size: 0.6rem; letter-spacing: 2px; font-weight: bold; margin-top: 5px;">BATCH: 001 // VERIFIED AUTHENTIC</p>
         </div>
     </div>
 
-    <footer style="margin-top: 80px; color: #333; font-size: 0.7rem; letter-spacing: 4px;">
-        VALHALLA INNOVATIONS // NODE: SUPPS-01 // SECURE SESSION ACTIVE
-    </footer>
+    <footer>VALHALLA INNOVATIONS // NODE: SUPPS-01 // SECURE SESSION ACTIVE</footer>
 </div>
 
 <script>
