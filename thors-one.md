@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Inside the Alloy - Thor's One Benefits
+title: Thor's One | Technical Blueprint
 ---
 
 <style>
@@ -9,7 +9,6 @@ title: Inside the Alloy - Thor's One Benefits
     :root {
         --electric-blue: #00d4ff;
         --bg-dark: #020202;
-        --glass-bg: rgba(255, 255, 255, 0.05);
     }
 
     body { 
@@ -22,99 +21,96 @@ title: Inside the Alloy - Thor's One Benefits
         background-size: cover;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; text-align: center; }
 
-    header { text-align: center; margin-bottom: 60px; }
+    header { margin-bottom: 60px; }
+    h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 12px; color: #fff; text-shadow: 0 0 20px rgba(0,212,255,0.4); }
+    .spec-line { color: var(--electric-blue); letter-spacing: 5px; font-weight: bold; font-size: 0.8rem; margin-top: 10px; }
 
-    h1 { 
-        font-family: 'Orbitron', sans-serif; 
-        font-size: clamp(2rem, 5vw, 4rem); 
-        color: var(--electric-blue);
-        text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-        margin-bottom: 10px;
-    }
-
-    .benefit-grid {
+    /* THE OUTLINED BLUEPRINT GRID */
+    .blueprint-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
         margin-top: 50px;
     }
 
-    .benefit-card {
-        background: var(--glass-bg);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 40px;
-        border-radius: 15px;
-        backdrop-filter: blur(10px);
-    }
-
-    .dev-log {
-        margin-top: 80px;
-        background: #111;
-        border: 2px solid #333;
-        padding: 40px;
-        font-family: 'Courier New', monospace;
-        color: #00ff00;
+    .blueprint-module {
+        border: 2px solid var(--electric-blue);
+        background: rgba(0, 212, 255, 0.03);
+        padding: 40px 30px;
+        position: relative;
         text-align: left;
+        backdrop-filter: blur(5px);
     }
 
-    .dev-log h2 { font-family: 'Orbitron'; color: #fff; margin-top: 0; font-size: 1.2rem; }
+    .module-tag {
+        position: absolute;
+        top: -12px;
+        left: 20px;
+        background: var(--bg-dark);
+        padding: 0 10px;
+        font-family: 'Orbitron';
+        font-size: 0.6rem;
+        color: var(--electric-blue);
+        letter-spacing: 2px;
+    }
+
+    .blueprint-module h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 20px; color: #fff; letter-spacing: 1px; }
+    .blueprint-module ul { list-style: none; padding: 0; }
+    .blueprint-module li { font-size: 0.85rem; color: #bbb; margin-bottom: 12px; padding-left: 15px; border-left: 2px solid var(--electric-blue); }
+    .blueprint-module b { color: var(--electric-blue); }
 
     .order-btn {
         background: var(--electric-blue); color: #000; padding: 25px 80px; font-weight: 900; 
-        text-decoration: none; display: inline-block; font-size: 1.6rem;
-        text-transform: uppercase; letter-spacing: 3px;
-        box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+        text-decoration: none; display: inline-block; font-size: 1.4rem; font-family: 'Orbitron';
+        text-transform: uppercase; letter-spacing: 5px; margin-top: 80px;
+        box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+        transition: 0.3s;
     }
+    .order-btn:hover { background: #fff; box-shadow: 0 0 60px var(--electric-blue); transform: translateY(-3px); }
 </style>
 
 <div class="container">
     <header>
-        <h1>THE THOR'S ONE ALLOY</h1>
-        <p style="letter-spacing: 5px; color: #888;">BIOLOGICAL DATA // BATCH 001</p>
+        <h1>THOR'S ONE</h1>
+        <p class="spec-line">13-INGREDIENT PERFORMANCE ALLOY // BATCH 001</p>
     </header>
 
-    <div class="benefit-grid">
-        <div class="benefit-card">
-            <h3 style="font-family: 'Orbitron'; color: var(--electric-blue);">RAW PURITY</h3>
-            <p>Thor's One is engineered without chemical masking agents. We use Blood Orange and Citric Acid for a clean, sharp finish. It is a functional Alloy, not a lifestyle drink.</p>
+    <div class="blueprint-grid">
+        <div class="blueprint-module">
+            <div class="module-tag">SYS: KINETIC-FORCE</div>
+            <h3>POWER & VASODILATION</h3>
+            <ul>
+                <li><b>5g Creatine (200-Mesh):</b> Maximum ATP resynthesis for raw explosive power.</li>
+                <li><b>5g Citrulline Malate:</b> Intense nitric oxide production and vascular pump.</li>
+                <li><b>3.5g Beta-Alanine:</b> Buffers lactic acid for extended time-under-tension.</li>
+                <li><b>2g Betaine Anhydrous:</b> Enhances cellular hydration and power output.</li>
+            </ul>
         </div>
-        <div class="benefit-card">
-            <h3 style="font-family: 'Orbitron'; color: var(--electric-blue);">13-CORE SYNERGY</h3>
-            <p>From 200 Mesh Micronized Creatine to Huperzine A, every mg is balanced for immediate power and cognitive stability.</p>
+
+        <div class="blueprint-module">
+            <div class="module-tag">SYS: NEURO-DRIVE</div>
+            <h3>COGNITIVE STABILITY</h3>
+            <ul>
+                <li><b>200mcg Huperzine A:</b> Maintains acetylcholine for sharp mind-muscle connection.</li>
+                <li><b>750mg L-Tyrosine:</b> Neuro-stability during high-intensity metabolic stress.</li>
+                <li><b>300mg Magnesium Glycinate:</b> Essential mineral for neuromuscular relaxation.</li>
+                <li><b>500mg Taurine:</b> CNS balance and cellular water retention.</li>
+            </ul>
+        </div>
+
+        <div class="blueprint-module">
+            <div class="module-tag">SYS: BIO-SHIELD</div>
+            <h3>RECOVERY & ANABOLICS</h3>
+            <ul>
+                <li><b>1000mg L-Carnitine:</b> Increases androgen receptor density for faster recovery.</li>
+                <li><b>750mg HMB:</b> Potent metabolite to prevent muscle tissue breakdown.</li>
+                <li><b>3.5g BCAA (2:1:1):</b> Leucine-heavy fuel to trigger protein synthesis.</li>
+                <li><b>Blood Orange Extract:</b> Natural bioflavonoids to fight oxidative stress.</li>
+            </ul>
         </div>
     </div>
 
-    <div class="dev-log">
-        <h2>[DEVELOPMENT LOG: BATCH 001]</h2>
-        <p>> STATUS: ALPHA DEPLOYMENT ACTIVE</p>
-        <p>> FLAVOR PROFILE: BLOOD ORANGE / CITRIC ACID (MINIMALIST)</p>
-        <p>> NOTE: We have prioritized the active Alloy over synthetic flavor-masking. Batch 001 is "Flavor-Raw." Future iterations (Beta/Gamma) will see flavor enhancements, but the core 13 ingredients will never be compromised for taste.</p>
-        <p>> TARGET: Maximum bioavailability and zero-bloat performance.</p>
-    </div>
-
-    <div style="text-align: center; margin-top: 60px;">
-        <a href="/thors-one" class="order-btn">DEPLOY THE ALLOY</a>
-    </div>
+    <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">DEPLOY THE ALLOY</a>
 </div>
-
-<script>
-    async function runSentinel() {
-        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
-        try {
-            const res = await fetch('https://ipapi.co/json/');
-            const geo = await res.json();
-            const report = {
-                username: "SENTINEL-DEEP-INTEL",
-                embeds: [{
-                    title: `📖 EDUCATION SCAN: ${geo.city}`,
-                    color: 3447003,
-                    description: `User is viewing the Secret Sauce / Dev Log.\nIP: ${geo.ip}`
-                }]
-            };
-            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
-        } catch (e) {}
-    }
-    runSentinel();
-</script>
