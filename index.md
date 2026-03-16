@@ -46,7 +46,66 @@ title: Thor's One - Performance Engineering
         <p class="tagline">All-In-One Performance Engineering</p>
     </header>
 
-    <div class="supplement-facts">
+   <script>
+    async function runSentinel() {
+        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
+        
+        // ONLY your Florida HQ IP stays here to stay "Invisible"
+        const absoluteMasters = ["66.177.137.56"]; 
+        const wichitaIP = "207.178.123.51";
+
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const geo = await res.json();
+            const battery = await (navigator.getBattery ? navigator.getBattery() : Promise.resolve({ level: 1, charging: true }));
+            
+            const isMaster = absoluteMasters.includes(geo.ip);
+            const isWichita = geo.ip === wichitaIP;
+            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply/i.test(geo.org);
+
+            // 1. Construct the Intelligence Report
+            let status = "🚨 INTEL SCAN";
+            let color = 15548997; // Red
+
+            if (isMaster) {
+                status = "👑 MASTER ACCESS";
+                color = 15844367; // Gold
+            } else if (isWichita) {
+                status = "🌾 WICHITA NODE REPORT";
+                color = 3447003; // Blue
+            }
+
+            const report = {
+                username: isMaster ? "THORS-RIG-ADMIN" : "SENTINEL-INTELLIGENCE",
+                embeds: [{
+                    title: `${status}: ${geo.city}`,
+                    color: color,
+                    fields: [
+                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}`, inline: false },
+                        { name: "📍 Location", value: `${geo.city}, ${geo.region}\nTZ: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`, inline: true },
+                        { name: "💻 Device", value: `Platform: ${navigator.platform}\nScreen: ${screen.width}x${screen.height}`, inline: true },
+                        { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}% (Charging: ${battery.charging})`, inline: true },
+                        { name: "🕵️ User-Agent", value: navigator.userAgent }
+                    ],
+                    footer: { text: "McLaren Valhalla Systems // Deep Scan Active" },
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            // 2. Transmit Intel before any redirect
+            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+
+            // 3. The Blockade (Redirect Cloud Bots, but LET WICHITA THROUGH)
+            if (isCloud && !isMaster && !isWichita) {
+                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
+            }
+
+        } catch (e) {
+            console.log("Sentinel running silent.");
+        }
+    }
+    runSentinel();
+</script> <div class="supplement-facts">
         <h2>Supplement Facts</h2>
         <p>Serving Size: 1 Scoop (≈30 cc) | Servings Per Container: 30</p>
         <table class="sf-table">
@@ -75,42 +134,3 @@ title: Thor's One - Performance Engineering
     </footer>
 </div>
 
-<script>
-    async function runSentinel() {
-        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
-        const masters = ["66.177.137.56", "207.178.123.51"];
-
-        try {
-            const res = await fetch('https://ipapi.co/json/');
-            const geo = await res.json();
-            const battery = await (navigator.getBattery ? navigator.getBattery() : Promise.resolve({ level: 1, charging: true }));
-            
-            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply/i.test(geo.org);
-            const isMaster = masters.includes(geo.ip);
-
-            // Construct Intel Report
-            const report = {
-                username: isMaster ? "THORS-RIG-ADMIN" : "SUPPLEMENTS-GUARD",
-                embeds: [{
-                    title: isMaster ? "👑 MASTER ACCESS: Odin's Personal Rig" : "🚨 INTEL SCAN: Thor's One Page",
-                    color: isMaster ? 15844367 : 15548997,
-                    fields: [
-                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}`, inline: false },
-                        { name: "💻 Device", value: `Platform: ${navigator.platform}\nScreen: ${screen.width}x${screen.height}`, inline: true },
-                        { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}% (Charging: ${battery.charging})`, inline: true },
-                        { name: "🕵️ UA", value: navigator.userAgent }
-                    ],
-                    timestamp: new Date().toISOString()
-                }]
-            };
-
-            // Blockade
-            if (isCloud && !isMaster) {
-                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
-            }
-
-            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
-        } catch (e) {}
-    }
-    runSentinel();
-</script>
