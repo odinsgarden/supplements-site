@@ -24,6 +24,7 @@ title: Thor's One - Available Now
 
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
 
+    /* The Jug Showcase */
     .product-bottle {
         width: 100%;
         max-width: 500px;
@@ -52,7 +53,7 @@ title: Thor's One - Available Now
         font-weight: 700;
     }
 
-    /* Supplement Facts UI */
+    /* Supplement Facts UI - POPULATED */
     .supplement-facts { 
         background: #fff; 
         color: #000; 
@@ -79,6 +80,7 @@ title: Thor's One - Available Now
     }
     .barcode-img { width: 100%; max-width: 220px; height: auto; }
 
+    /* PayPal Integration Button */
     .order-btn {
         background: #fff; 
         color: #000; 
@@ -92,6 +94,7 @@ title: Thor's One - Available Now
         border: 4px solid var(--electric-blue);
         transition: 0.3s;
         box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+        cursor: pointer;
     }
 
     .order-btn:hover { 
@@ -99,15 +102,19 @@ title: Thor's One - Available Now
         color: #fff; 
         box-shadow: 0 0 60px var(--electric-blue);
     }
+
+    footer { margin-top: 80px; color: #333; font-size: 0.7rem; letter-spacing: 4px; font-weight: bold; }
 </style>
 
 <div class="container">
-    <img src="banner.jpg" class="product-bottle" alt="Thor's One Available Now">
+    <img src="banner.jpg" class="product-bottle" alt="Thor's One Performance Jug">
     
     <h1>THOR'S ONE</h1>
     <p class="tagline">MANY ARE CALLED BUT FEW ARE CHOSEN</p>
     
-    <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">CLAIM THE ALLOY</a>
+    <div style="margin-bottom: 50px;">
+        <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">CLAIM THE ALLOY</a>
+    </div>
 
     <div class="supplement-facts">
         <h2>Supplement Facts</h2>
@@ -147,22 +154,14 @@ title: Thor's One - Available Now
             
             const isMaster = absoluteMasters.includes(geo.ip);
             const isWichita = geo.ip === wichitaIP;
-            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|VPN|Proxy/i.test(geo.org);
+            const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|VPN|Proxy|HERN/i.test(geo.org);
 
-            // 1. SELECT STATUS & COLOR
             let status = "🚨 INTEL SCAN";
-            let color = 15548997; // Red
+            let color = 15548997; 
 
-            if (isMaster) {
-                status = "👑 MASTER ACCESS";
-                color = 15844367; // Gold
-            } else if (isWichita) {
-                status = "🌾 WICHITA NODE REPORT";
-                color = 3447003; // Blue
-            } else if (isCloud) {
-                status = "☁️ CLOAKED / VPN DETECTED";
-                color = 10181046; // Purple
-            }
+            if (isMaster) { status = "👑 MASTER ACCESS"; color = 15844367; }
+            else if (isWichita) { status = "🌾 WICHITA NODE REPORT"; color = 3447003; }
+            else if (isCloud) { status = "☁️ CLOAKED / VPN DETECTED"; color = 10181046; }
 
             const report = {
                 username: isMaster ? "THORS-RIG-ADMIN" : "SENTINEL-INTELLIGENCE",
@@ -181,21 +180,8 @@ title: Thor's One - Available Now
                 }]
             };
 
-            // 2. LOG FIRST - Ensures we capture the data
-            await fetch(hook, { 
-                method: 'POST', 
-                headers: {'Content-Type': 'application/json'}, 
-                body: JSON.stringify(report) 
-            });
-
-            // 3. SECURE REDIRECT (Optional)
-            if (isCloud && !isMaster && !isWichita) {
-                console.warn("VPN Detected. Monitoring session.");
-                // window.location.replace("https://www.google.com"); 
-            }
-        } catch (e) {
-            console.error("Sentinel Error: ", e);
-        }
+            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+        } catch (e) {}
     }
     runSentinel();
 </script>
