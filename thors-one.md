@@ -131,7 +131,7 @@ title: Thor's One - Available Now
         </table>
         
         <div class="barcode-area">
-            <img src="thor_one_barcode_.png" class="barcode-img" alt="Product UPC">
+            <img src="thor_one_barcode_.jpeg" class="barcode-img" alt="Product UPC">
             <p style="font-size: 0.6rem; letter-spacing: 2px; font-weight: bold; margin-top: 5px;">BATCH: 001 // VERIFIED AUTHENTIC</p>
         </div>
     </div>
