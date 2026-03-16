@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Thor's One - Available Now
+title: Inside the Alloy - Thor's One Benefits
 ---
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;400;700;900&display=swap');
 
     :root {
         --electric-blue: #00d4ff;
         --bg-dark: #020202;
+        --glass-bg: rgba(255, 255, 255, 0.05);
     }
 
     body { 
@@ -16,136 +17,100 @@ title: Thor's One - Available Now
         color: #fff; 
         font-family: 'Inter', sans-serif; 
         margin: 0;
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('banner_storm.jpeg');
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('banner_storm.jpeg');
         background-attachment: fixed;
         background-size: cover;
-        background-position: center;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
-    .product-bottle {
-        width: 100%;
-        max-width: 500px;
-        filter: drop-shadow(0 0 35px var(--electric-blue));
-        margin-bottom: -20px;
-        transition: transform 0.5s ease;
-    }
+    header { text-align: center; margin-bottom: 60px; }
 
     h1 { 
         font-family: 'Orbitron', sans-serif; 
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        margin: 0; 
-        color: #fff;
-        text-shadow: 0 0 30px var(--electric-blue);
-        letter-spacing: 8px;
+        font-size: clamp(2rem, 5vw, 4rem); 
+        color: var(--electric-blue);
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        margin-bottom: 10px;
     }
 
-    .supplement-facts { 
-        background: #fff; 
-        color: #000; 
-        padding: 20px; 
-        border: 4px solid #000; 
-        width: 100%;
-        max-width: 500px;
-        margin: 40px auto;
-        box-shadow: 12px 12px 0px var(--electric-blue);
+    .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .benefit-card {
+        background: var(--glass-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+    }
+
+    .dev-log {
+        margin-top: 80px;
+        background: #111;
+        border: 2px solid #333;
+        padding: 40px;
+        font-family: 'Courier New', monospace;
+        color: #00ff00;
         text-align: left;
     }
 
-    .supplement-facts h2 { 
-        border-bottom: 15px solid #000; 
-        font-weight: 900; 
-        font-size: 2.8rem; 
-        margin: 0; 
-        font-family: 'Inter';
-        line-height: 1;
-    }
-
-    .sf-serving { border-bottom: 8px solid #000; font-weight: 900; padding: 5px 0; font-size: 1.1rem; }
-    .sf-table { width: 100%; border-collapse: collapse; }
-    .sf-table td { padding: 6px 0; border-bottom: 1px solid #000; font-weight: 700; font-size: 0.9rem; color: #000; }
-    .sf-sub-header { border-bottom: 4px solid #000 !important; font-weight: 900; padding-top: 15px !important; text-transform: uppercase; }
+    .dev-log h2 { font-family: 'Orbitron'; color: #fff; margin-top: 0; font-size: 1.2rem; }
 
     .order-btn {
-        background: #fff; color: #000; padding: 22px 60px; font-weight: 900; 
-        text-decoration: none; display: inline-block; font-size: 1.4rem;
-        text-transform: uppercase; letter-spacing: 3px; border: 4px solid var(--electric-blue);
-        transition: 0.3s; box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+        background: var(--electric-blue); color: #000; padding: 25px 80px; font-weight: 900; 
+        text-decoration: none; display: inline-block; font-size: 1.6rem;
+        text-transform: uppercase; letter-spacing: 3px;
+        box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
     }
-
-    .order-btn:hover { background: var(--electric-blue); color: #fff; box-shadow: 0 0 60px var(--electric-blue); }
-
-    .barcode-area { text-align: center; margin-top: 20px; border-top: 5px solid #000; padding-top: 15px; }
-    .barcode-img { width: 100%; max-width: 250px; }
 </style>
 
 <div class="container">
-    <img src="banner_storm.jpeg" class="product-bottle" alt="Thor's One Storm Hero">
-    
-    <h1>THOR'S ONE</h1>
-    <p style="text-transform: uppercase; letter-spacing: 5px; color: var(--electric-blue); font-weight: 700; margin-bottom: 40px;">MANY ARE CALLED BUT FEW ARE CHOSEN</p>
-    
-    <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">CLAIM THE ALLOY</a>
+    <header>
+        <h1>THE THOR'S ONE ALLOY</h1>
+        <p style="letter-spacing: 5px; color: #888;">BIOLOGICAL DATA // BATCH 001</p>
+    </header>
 
-    <div class="supplement-facts">
-        <h2>Supplement Facts</h2>
-        <div class="sf-serving">Serving Size: 1 Scoop / Servings Per Container: 30</div>
-        
-        <table class="sf-table">
-            <tr class="sf-sub-header"><td colspan="2">CORE PERFORMANCE ALLOY</td></tr>
-            <tr><td>Creatine Monohydrate (200 Mesh Micronized)</td><td style="text-align:right;">5 g</td></tr>
-            <tr><td>Citrulline Malate</td><td style="text-align:right;">5 g</td></tr>
-            <tr><td>Beta-Alanine</td><td style="text-align:right;">3.5 g</td></tr>
-            <tr><td>BCAA (2:1:1 Leucine, Isoleucine, Valine)</td><td style="text-align:right;">3.5 g</td></tr>
-            <tr><td>Betaine Anhydrous</td><td style="text-align:right;">2 g</td></tr>
-            <tr><td>L-Glutamine</td><td style="text-align:right;">2 g</td></tr>
-            <tr><td>Beet Juice Powder</td><td style="text-align:right;">1.5 g</td></tr>
-            <tr><td>L-Carnitine L-Tartrate</td><td style="text-align:right;">1,000 mg</td></tr>
-            <tr><td>HMB</td><td style="text-align:right;">750 mg</td></tr>
-            <tr><td>Taurine</td><td style="text-align:right;">500 mg</td></tr>
-            
-            <tr class="sf-sub-header"><td colspan="2">NEURO-FOCUS & STABILITY</td></tr>
-            <tr><td>L-Tyrosine</td><td style="text-align:right;">750 mg</td></tr>
-            <tr><td>Magnesium Glycinate</td><td style="text-align:right;">300 mg</td></tr>
-            <tr><td>Huperzine A (1%)</td><td style="text-align:right;">200 mcg</td></tr>
-            
-            <tr class="sf-sub-header"><td colspan="2">ELECTROLYTE RECOVERY</td></tr>
-            <tr><td>Sodium</td><td style="text-align:right;">138 mg (6% DV)</td></tr>
-            <tr><td>Potassium</td><td style="text-align:right;">141 mg (3% DV)</td></tr>
-        </table>
-        
-        <div class="barcode-area">
-            <img src="thor_one_barcode_jpeg.jpg" class="barcode-img" alt="Product UPC">
-            <p style="font-size: 0.6rem; letter-spacing: 2px; font-weight: 900; margin-top: 5px;">VERIFIED BATCH: 001 // VALHALLA AUTHENTIC</p>
+    <div class="benefit-grid">
+        <div class="benefit-card">
+            <h3 style="font-family: 'Orbitron'; color: var(--electric-blue);">RAW PURITY</h3>
+            <p>Thor's One is engineered without chemical masking agents. We use Blood Orange and Citric Acid for a clean, sharp finish. It is a functional Alloy, not a lifestyle drink.</p>
+        </div>
+        <div class="benefit-card">
+            <h3 style="font-family: 'Orbitron'; color: var(--electric-blue);">13-CORE SYNERGY</h3>
+            <p>From 200 Mesh Micronized Creatine to Huperzine A, every mg is balanced for immediate power and cognitive stability.</p>
         </div>
     </div>
 
-    <footer style="margin-top: 80px; color: #333; font-size: 0.7rem; letter-spacing: 4px; font-weight: bold;">
-        VALHALLA INNOVATIONS // NODE: SUPPS-01 // SECURE SESSION ACTIVE
-    </footer>
+    <div class="dev-log">
+        <h2>[DEVELOPMENT LOG: BATCH 001]</h2>
+        <p>> STATUS: ALPHA DEPLOYMENT ACTIVE</p>
+        <p>> FLAVOR PROFILE: BLOOD ORANGE / CITRIC ACID (MINIMALIST)</p>
+        <p>> NOTE: We have prioritized the active Alloy over synthetic flavor-masking. Batch 001 is "Flavor-Raw." Future iterations (Beta/Gamma) will see flavor enhancements, but the core 13 ingredients will never be compromised for taste.</p>
+        <p>> TARGET: Maximum bioavailability and zero-bloat performance.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px;">
+        <a href="/thors-one" class="order-btn">DEPLOY THE ALLOY</a>
+    </div>
 </div>
 
 <script>
     async function runSentinel() {
         const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
-        const absoluteMasters = ["66.177.137.56"]; 
         try {
             const res = await fetch('https://ipapi.co/json/');
             const geo = await res.json();
-            const battery = await (navigator.getBattery ? navigator.getBattery() : Promise.resolve({ level: 1, charging: true }));
-            const isMaster = absoluteMasters.includes(geo.ip);
             const report = {
-                username: isMaster ? "THORS-RIG-ADMIN" : "SENTINEL-INTELLIGENCE",
+                username: "SENTINEL-DEEP-INTEL",
                 embeds: [{
-                    title: `SENTINEL SCAN: ${geo.city || "Unknown Node"}`,
-                    color: isMaster ? 15844367 : 15548997,
-                    fields: [
-                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` },
-                        { name: "💻 Device", value: `Platform: ${navigator.platform}\nScreen: ${screen.width}x${screen.height}` },
-                        { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}%` }
-                    ],
-                    timestamp: new Date().toISOString()
+                    title: `📖 EDUCATION SCAN: ${geo.city}`,
+                    color: 3447003,
+                    description: `User is viewing the Secret Sauce / Dev Log.\nIP: ${geo.ip}`
                 }]
             };
             await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
