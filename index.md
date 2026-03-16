@@ -117,41 +117,48 @@ title: Valhalla Innovations | Command Center
 <script>
     async function runSentinel() {
         const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
-        const absoluteMasters = ["66.177.137.56"]; 
+        
+        // 1. Check for Secret Master Key in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const isMaster = urlParams.get('key') === 'odin'; // THE SECRET WORD
 
         try {
             const res = await fetch('https://ipapi.co/json/');
             const geo = await res.json();
             
-            // BOT-SMASHER LOGIC
-            const isBotFarm = /Amazon|AWS|Google|Cloud|Azure|Microsoft|DigitalOcean|Hetzner|HERN/i.test(geo.org);
-            const isMaster = absoluteMasters.includes(geo.ip);
-            
+            // 2. Automated Bot/Cloud Detection
+            const isBotFarm = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|Largman|Hetzner|OVH|HERN/i.test(geo.org);
+
+            // 3. Construct Intelligence Report
             let status = isBotFarm ? "🔨 BOT SMASHED" : "🏠 HOME SCAN";
             let color = isBotFarm ? 16711680 : 3447003;
 
-            if (isMaster) { status = "👑 MASTER ACCESS"; color = 15844367; }
+            if (isMaster) {
+                status = "👑 MASTER BYPASS (OPERA/VPN)";
+                color = 16776960; // Gold
+            }
 
             const report = {
-                username: isBotFarm ? "ANTI-BOT-SENTINEL" : "SENTINEL-SURVEILLANCE",
+                username: "VALHALLA-SENTINEL",
                 embeds: [{
                     title: `${status}: ${geo.city}`,
                     color: color,
                     fields: [
-                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}`, inline: false },
-                        { name: "📍 Location", value: `${geo.city}, ${geo.region}`, inline: true },
-                        { name: "🔋 Intel", value: "Hardware Fingerprint Logged", inline: true }
+                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` },
+                        { name: "📍 Location", value: `${geo.city}, ${geo.region}` },
+                        { name: "🕵️ Device", value: navigator.userAgent }
                     ],
-                    footer: { text: "Protocol: Honey Pot Active" },
+                    footer: { text: "Protocol: Odin's Key Active" },
                     timestamp: new Date().toISOString()
                 }]
             };
 
             await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
 
+            // 4. THE EXECUTION
+            // If it's a bot farm AND they don't have the secret key, SMASH THEM.
             if (isBotFarm && !isMaster) {
-                // Kick the bot to a dead end
-                window.location.replace("https://www.google.com/search?q=unauthorized+scraping+detected");
+                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
             }
         } catch (e) {}
     }
