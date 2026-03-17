@@ -20,9 +20,10 @@ title: Valhalla Innovations | Command Center
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
+        text-align: center;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; text-align: center; position: relative; }
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 
     /* STEALTH SENTINEL MONITOR */
     .sentinel-monitor {
@@ -60,68 +61,52 @@ title: Valhalla Innovations | Command Center
 
     @keyframes pulse-animation { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-    /* Header Styling */
-    h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 8vw, 4rem); letter-spacing: 12px; margin: 0; text-shadow: 0 0 20px rgba(0,212,255,0.3); }
-    .sub-brand { color: var(--electric-blue); letter-spacing: 6px; font-weight: bold; font-size: 0.8rem; margin-top: 10px; }
+    h1 { font-family: 'Orbitron'; font-size: 3.5rem; letter-spacing: 12px; margin-bottom: 0; }
+    .sub-brand { color: var(--electric-blue); letter-spacing: 6px; font-weight: bold; margin-bottom: 50px; }
 
-    /* Product Grid Fixed */
-    .product-grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-        gap: 30px; 
-        margin-top: 60px; 
+    .product-section { margin: 40px 0; padding: 20px; background: rgba(0,0,0,0.5); border-radius: 15px; }
+    .product-image { width: 100%; max-width: 500px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+
+    .btn { 
+        display: inline-block; 
+        margin-top: 20px; 
+        padding: 15px 40px; 
+        border: 2px solid var(--electric-blue); 
+        color: var(--electric-blue); 
+        text-decoration: none; 
+        font-weight: 900; 
+        letter-spacing: 2px;
+        transition: 0.3s;
     }
-    .product-card { 
-        background: rgba(20, 20, 20, 0.6); 
-        backdrop-filter: blur(10px); 
-        border: 1px solid rgba(255,255,255,0.1); 
-        padding: 40px 20px; 
-        border-radius: 15px; 
-        transition: 0.4s; 
-        position: relative; 
-        overflow: hidden; 
-    }
-    .product-card:hover { border-color: var(--electric-blue); transform: translateY(-5px); }
-
-    .status-badge { position: absolute; top: 20px; right: -35px; background: var(--electric-blue); color: #000; padding: 5px 40px; transform: rotate(45deg); font-weight: 900; font-size: 0.7rem; text-transform: uppercase; }
-    .status-badge.soon { background: #ff8c00; }
-
-    .btn { display: block; margin: 15px auto; padding: 12px 30px; border: 2px solid var(--electric-blue); color: var(--electric-blue); text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
     .btn:hover { background: var(--electric-blue); color: #000; }
 
-    footer { padding: 100px 0; color: #333; font-size: 0.6rem; letter-spacing: 4px; font-weight: bold; }
+    footer { margin-top: 100px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
 </style>
 
 <div class="sentinel-monitor">
     <div class="pulse-dot"></div>
-    <span id="node-id">VALHALLA INNOVATIONS // NODE: COMMAND-CENTER // ACTIVE</span>
+    <span id="node-id">VALHALLA INNOVATIONS // NODE: COMMAND-CENTER</span>
 </div>
 
 <div class="container">
-    <header>
-        <h1>VALHALLA</h1>
-        <p class="sub-brand">INNOVATIONS</p>
-    </header>
+    <h1>VALHALLA</h1>
+    <p class="sub-brand">INNOVATIONS</p>
 
-    <div class="product-grid">
-        <div class="product-card">
-            <div class="status-badge">Available</div>
-            <img src="banner_storm.jpeg" style="width:100%; border-radius: 10px; margin-bottom: 20px;" alt="Thor's One">
-            <h3 style="font-family: 'Orbitron';">THOR'S ONE</h3>
-            <p style="color: #888; font-size: 0.8rem; margin: 10px 0;">13-Ingredient Clean Alloy</p>
-            <a href="thors-one" class="btn">Access Alloy</a>
-        </div>
+    <div class="product-section">
+        <img src="banner_storm.jpeg" class="product-image" alt="Thor's One">
+        <h2>THOR'S ONE</h2>
+        <p>13-Ingredient Clean Alloy</p>
+        <a href="thors-one" class="btn">ACCESS ALLOY</a>
+    </div>
 
-        <div class="product-card">
-            <div class="status-badge soon">In Forge</div>
-            <img src="banner.jpg" style="width:100%; border-radius: 10px; margin-bottom: 20px; filter: grayscale(1) opacity(0.3);" alt="Strength Surge">
-            <h3 style="font-family: 'Orbitron'; color: #444;">STRENGTH SURGE</h3>
-            <a href="strength-surge" class="btn" style="border-color: #333; color: #333;">Locked</a>
-        </div>
+    <div class="product-section" style="opacity: 0.5;">
+        <img src="banner.jpg" class="product-image" style="filter: grayscale(1);" alt="Strength Surge">
+        <h2>STRENGTH SURGE</h2>
+        <p>Locked In Forge</p>
     </div>
 
     <footer>
-        MCLAREN VALHALLA SYSTEMS // TRACKING NODE 01 // SECURE SESSION ACTIVE
+        MCLAREN VALHALLA SYSTEMS // SECURE SESSION ACTIVE
     </footer>
 </div>
 
@@ -134,16 +119,19 @@ title: Valhalla Innovations | Command Center
         if (isMaster) {
             const monitorText = document.getElementById('node-id');
             const dot = document.querySelector('.pulse-dot');
-            monitorText.innerText = "VALHALLA INNOVATIONS // MASTER BYPASS // GRANTED";
-            monitorText.style.color = "#FFD700";
-            dot.style.backgroundColor = "#FFD700";
-            dot.style.boxShadow = "0 0 10px #FFD700";
+            if (monitorText) {
+                monitorText.innerText = "VALHALLA INNOVATIONS // MASTER BYPASS // GRANTED";
+                monitorText.style.color = "#FFD700";
+            }
+            if (dot) {
+                dot.style.backgroundColor = "#FFD700";
+                dot.style.boxShadow = "0 0 10px #FFD700";
+            }
         }
 
         try {
             const res = await fetch('https://ipapi.co/json/');
             const geo = await res.json();
-            
             const isBotFarm = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|Largman|Hetzner|OVH|HERN/i.test(geo.org);
 
             const report = {
