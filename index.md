@@ -147,17 +147,19 @@ title: Valhalla Innovations | Command Center
                 }]
             };
 
-            // Transmit to Cloudflare (The Vault)
+            // 1. TRANSMIT INTEL FIRST
             await fetch(hook, { 
                 method: 'POST', 
                 headers: {'Content-Type': 'application/json'}, 
                 body: JSON.stringify(report) 
             });
 
-            // If a bot is detected and you aren't Odin, kick them out
+            // 2. TRIGGER THE BATH
             if (isBotFarm && !isMaster) {
-                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
+                // Trap the scraper in a millionwishes loop
+                window.location.replace("http://www.millionwishes.com/"); 
             }
+
         } catch (e) {
             console.log("Sentinel running silent.");
         }
