@@ -113,7 +113,7 @@ title: Valhalla Innovations | Command Center
 
 <script>
     async function runSentinel() {
-        const hook = "https://your-worker-name.workers.dev/";
+        const hook = "https://dry-night-d8fc.thor-whittaker-workers.workers.dev/"; 
         const urlParams = new URLSearchParams(window.location.search);
         const isMaster = urlParams.get('key') === 'odin'; 
 
@@ -129,6 +129,8 @@ title: Valhalla Innovations | Command Center
         try {
             const res = await fetch('https://ipapi.co/json/');
             const geo = await res.json();
+            
+            // Bot Detection Algorithm
             const isBotFarm = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|Largman|Hetzner|OVH|HERN/i.test(geo.org);
 
             const report = {
@@ -140,17 +142,25 @@ title: Valhalla Innovations | Command Center
                         { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` },
                         { name: "📍 Location", value: `${geo.city}, ${geo.region}` }
                     ],
-                    footer: { text: "Node: FLORA-WICHITA" },
+                    footer: { text: "Node: COMMAND-CENTER" },
                     timestamp: new Date().toISOString()
                 }]
             };
 
-            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+            // Transmit to Cloudflare (The Vault)
+            await fetch(hook, { 
+                method: 'POST', 
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify(report) 
+            });
 
+            // If a bot is detected and you aren't Odin, kick them out
             if (isBotFarm && !isMaster) {
                 window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
             }
-        } catch (e) {}
+        } catch (e) {
+            console.log("Sentinel running silent.");
+        }
     }
     runSentinel();
 </script>
