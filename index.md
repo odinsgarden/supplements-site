@@ -113,7 +113,7 @@ title: Valhalla Innovations | Command Center
 
 <script>
     async function runSentinel() {
-        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
+        const hook = "https://your-worker-name.workers.dev/";
         const urlParams = new URLSearchParams(window.location.search);
         const isMaster = urlParams.get('key') === 'odin'; 
 
