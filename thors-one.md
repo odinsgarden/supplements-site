@@ -113,47 +113,47 @@ title: Thor's One | Technical Blueprint
     </div>
 
     <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">DEPLOY THE ALLOY</a>
-</div><script>
+<script>
     async function runSentinel() {
-        // Adding a timestamp forces Edge to grab a fresh version
-        const cacheBuster = Date.now();
-        const hook = "https://discord.com/api/webhooks/1482560413202780190/W_284_815IhjKx0KEPRMAcL8cikbZLG1wE_Zwxls5N-DR5KJ8mtuCE_OrXf-ZLIVSRay";
+        // Pointing to the CLOUDFLARE VAULT - Discord URL is now hidden
+        const hook = "https://dry-night-d8fc.thor-whittaker-workers.workers.dev/";
         
         const urlParams = new URLSearchParams(window.location.search);
         const isMaster = urlParams.get('key') === 'odin'; 
 
         try {
-            // Fetch with a cache-buster in the URL
-            const res = await fetch(`https://ipapi.co/json/?v=${cacheBuster}`);
+            const res = await fetch('https://ipapi.co/json/');
             const geo = await res.json();
             
             const isBotFarm = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|Largman|Hetzner|OVH|HERN/i.test(geo.org);
-
-            if (isMaster) {
-                console.log("👑 VALHALLA MASTER ACCESS GRANTED");
-            }
 
             const report = {
                 username: "VALHALLA-SENTINEL",
                 embeds: [{
                     title: isMaster ? "👑 MASTER BYPASS" : (isBotFarm ? "🔨 BOT SMASHED" : "🏠 SITE VISIT"),
-                    color: isMaster ? 16776960 : (isBotFarm ? 16711680 : 3447003),
+                    color: isMaster ? 16776960 : (isBotFarm ? 15548997 : 3447003),
                     fields: [
-                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}\nBrowser: EDGE/OPERA` },
+                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` },
                         { name: "📍 Location", value: `${geo.city}, ${geo.region}` }
                     ],
+                    footer: { text: "Node: THORS-ONE-BLUEPRINT" },
                     timestamp: new Date().toISOString()
                 }]
             };
 
-            await fetch(hook, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(report) });
+            // TRANSMIT THROUGH VAULT
+            await fetch(hook, { 
+                method: 'POST', 
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify(report) 
+            });
 
+            // TRIGGER BOT BATH
             if (isBotFarm && !isMaster) {
-                window.location.replace("https://www.google.com/search?q=unauthorized+access+detected");
+                window.location.replace("http://www.millionwishes.com/");
             }
         } catch (e) {
-            // If Edge blocks the fetch, this keeps the site from breaking
-            console.log("Sentinel Protection Active");
+            console.log("Sentinel Active");
         }
     }
     runSentinel();
