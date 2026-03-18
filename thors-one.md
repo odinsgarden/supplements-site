@@ -116,7 +116,7 @@ title: Thor's One | Technical Blueprint
 <script>
     async function runSentinel() {
         // Pointing to the CLOUDFLARE VAULT - Discord URL is now hidden
-        const hook = const hook = "https://dry-night-df9c.thor-whittaker.workers.dev/";
+        const hook = "https://dry-night-df9c.thor-whittaker.workers.dev/";
         
         const urlParams = new URLSearchParams(window.location.search);
         const isMaster = urlParams.get('key') === 'odin'; 
