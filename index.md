@@ -96,7 +96,7 @@ title: Valhalla Innovations | Command Center
         <img src="banner_storm.jpeg" class="product-image" alt="Thor's One">
         <h2>THOR'S ONE</h2>
         <p>13-Ingredient Clean Alloy</p>
-        <a href="thors-one" class="btn">ACCESS ALLOY</a>
+        <a href="thors-one?key=odin" class="btn">ACCESS ALLOY</a>
     </div>
 
     <div class="product-section" style="opacity: 0.5;">
