@@ -112,7 +112,36 @@ title: Thor's One | Technical Blueprint
         </div>
     </div>
 
-    <a href="https://www.paypal.com/ncp/payment/Z6NLB5ECC653L" class="order-btn">DEPLOY THE ALLOY</a>
+<div style="max-width: 600px; margin: 80px auto; padding: 40px; border: 2px solid var(--electric-blue); background: rgba(0, 212, 255, 0.05); backdrop-filter: blur(10px);">
+        
+        <div style="background: var(--electric-blue); color: #000; font-family: 'Orbitron'; padding: 10px; font-weight: 900; letter-spacing: 2px; margin-bottom: 25px;">
+            🎁 BATCH 001 BONUS: LENOVO HEADPHONES
+        </div>
+
+        <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 0; color: #fff;">$53.00</h2>
+        <p style="color: #888; font-size: 0.8rem; margin-bottom: 30px;">($40.00 Unit + $13.00 Insured Flat-Rate Shipping)</p>
+
+        <div id="paypal-container-T7FR6ZGBZZK3N"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=BAAJQIrRYCOEwuxsYzYZXbHsdcFcdEqiYseCuYC-jaUaCs1aZBP5yk1g7P075zSszF23AWBULxvAb5VKiU&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+        <script>
+          paypal.HostedButtons({
+            hostedButtonId: "T7FR6ZGBZZK3N",
+          }).render("#paypal-container-T7FR6ZGBZZK3N");
+        </script>
+
+        <p style="color: #555; font-size: 0.7rem; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px;">
+            While Supplies Last // Every order is an entry to win.
+        </p>
+
+        <hr style="border: 0; border-top: 1px solid #222; margin: 40px 0;">
+
+        <h4 style="font-family: 'Orbitron'; color: var(--electric-blue); font-size: 0.9rem; margin-bottom: 15px;">MESSAGE THE FORGE</h4>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+            <input type="email" name="email" placeholder="Your Email" required style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; font-family: 'Inter';">
+            <textarea name="message" placeholder="Questions about shipping or Batch 001?" required style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; font-family: 'Inter'; height: 80px;"></textarea>
+            <button type="submit" style="background: transparent; border: 1px solid var(--electric-blue); color: var(--electric-blue); font-family: 'Orbitron'; padding: 12px; cursor: pointer; font-weight: bold;">SEND DISPATCH</button>
+        </form>
+    </div>  
 <script>
     async function runSentinel() {
         // Pointing to the CLOUDFLARE VAULT - Discord URL is now hidden
