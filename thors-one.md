@@ -3,6 +3,35 @@ layout: default
 title: Thor's One | Technical Blueprint
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Thor's One Performance Alloy",
+  "gtin12": "199874352886",
+  "sku": "THOR-B001-JAX",
+  "brand": {
+    "@type": "Brand",
+    "name": "Valhalla Innovations"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://supplements.valhallainnovations.com/thors-one",
+    "price": "40.00",
+    "priceCurrency": "USD",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "13.00",
+        "currency": "USD"
+      }
+    }
+  }
+}
+</script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;400;700;900&display=swap');
 
@@ -142,6 +171,16 @@ title: Thor's One | Technical Blueprint
             <button type="submit" style="background: transparent; border: 1px solid var(--electric-blue); color: var(--electric-blue); font-family: 'Orbitron'; padding: 12px; cursor: pointer; font-weight: bold;">SEND DISPATCH</button>
         </form>
     </div>  
+    <div style="margin-top: 50px; border-top: 1px solid #222; padding-top: 20px; opacity: 0.5; text-align: center;">
+    <p style="font-family: 'Orbitron'; font-size: 0.6rem; letter-spacing: 2px; color: var(--electric-blue);">GS1 GLOBAL TRACKING ACTIVE</p>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+        <img src="thor_one_barcode_.png" style="height: 50px; filter: invert(1); border: 1px solid #333; padding: 5px;">
+        <div style="text-align: left;">
+            <p style="font-size: 0.55rem; color: #fff; margin: 0;">GTIN: 1 99874 35288 6</p>
+            <p style="font-size: 0.55rem; color: #888; margin: 0;">BATCH: 001-JAX</p>
+        </div>
+    </div>
+</div>
 <script>
     async function runSentinel() {
         // Pointing to the CLOUDFLARE VAULT - Discord URL is now hidden
