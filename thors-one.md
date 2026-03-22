@@ -32,6 +32,7 @@ title: Thor's One | Technical Blueprint
   }
 }
 </script>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;400;700;900&display=swap');
 
@@ -56,7 +57,6 @@ title: Thor's One | Technical Blueprint
     h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 12px; color: #fff; text-shadow: 0 0 20px rgba(0,212,255,0.4); }
     .spec-line { color: var(--electric-blue); letter-spacing: 5px; font-weight: bold; font-size: 0.8rem; margin-top: 10px; }
 
-    /* THE OUTLINED BLUEPRINT GRID */
     .blueprint-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -90,14 +90,15 @@ title: Thor's One | Technical Blueprint
     .blueprint-module li { font-size: 0.85rem; color: #bbb; margin-bottom: 12px; padding-left: 15px; border-left: 2px solid var(--electric-blue); }
     .blueprint-module b { color: var(--electric-blue); }
 
-    .order-btn {
-        background: var(--electric-blue); color: #000; padding: 25px 80px; font-weight: 900; 
-        text-decoration: none; display: inline-block; font-size: 1.4rem; font-family: 'Orbitron';
-        text-transform: uppercase; letter-spacing: 5px; margin-top: 80px;
-        box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+    .nav-node {
+        color: #666;
+        font-family: 'Orbitron';
+        font-size: 0.7rem;
+        text-decoration: none;
+        letter-spacing: 2px;
         transition: 0.3s;
     }
-    .order-btn:hover { background: #fff; box-shadow: 0 0 60px var(--electric-blue); transform: translateY(-3px); }
+    .nav-node:hover { color: var(--electric-blue); }
 </style>
 
 <div class="container">
@@ -111,10 +112,10 @@ title: Thor's One | Technical Blueprint
             <div class="module-tag">SYS: KINETIC-FORCE</div>
             <h3>POWER & VASODILATION</h3>
             <ul>
-                <li><b>5g Creatine (200-Mesh):</b> Maximum ATP resynthesis for raw explosive power.</li>
-                <li><b>5g Citrulline Malate:</b> Intense nitric oxide production and vascular pump.</li>
-                <li><b>3.5g Beta-Alanine:</b> Buffers lactic acid for extended time-under-tension.</li>
-                <li><b>2g Betaine Anhydrous:</b> Enhances cellular hydration and power output.</li>
+                <li><b>5g Creatine (200-Mesh):</b> Maximum ATP resynthesis.</li>
+                <li><b>5g Citrulline Malate:</b> Nitric oxide production.</li>
+                <li><b>3.5g Beta-Alanine:</b> Lactic acid buffering.</li>
+                <li><b>2g Betaine Anhydrous:</b> Cellular hydration.</li>
             </ul>
         </div>
 
@@ -122,10 +123,10 @@ title: Thor's One | Technical Blueprint
             <div class="module-tag">SYS: NEURO-DRIVE</div>
             <h3>COGNITIVE STABILITY</h3>
             <ul>
-                <li><b>200mcg Huperzine A:</b> Maintains acetylcholine for sharp mind-muscle connection.</li>
-                <li><b>750mg L-Tyrosine:</b> Neuro-stability during high-intensity metabolic stress.</li>
-                <li><b>300mg Magnesium Glycinate:</b> Essential mineral for neuromuscular relaxation.</li>
-                <li><b>500mg Taurine:</b> CNS balance and cellular water retention.</li>
+                <li><b>200mcg Huperzine A:</b> Sharp mind-muscle connection.</li>
+                <li><b>750mg L-Tyrosine:</b> Metabolic stress stability.</li>
+                <li><b>300mg Magnesium Glycinate:</b> Neuromuscular relaxation.</li>
+                <li><b>500mg Taurine:</b> CNS balance.</li>
             </ul>
         </div>
 
@@ -133,15 +134,15 @@ title: Thor's One | Technical Blueprint
             <div class="module-tag">SYS: BIO-SHIELD</div>
             <h3>RECOVERY & ANABOLICS</h3>
             <ul>
-                <li><b>1000mg L-Carnitine:</b> Increases androgen receptor density for faster recovery.</li>
-                <li><b>750mg HMB:</b> Potent metabolite to prevent muscle tissue breakdown.</li>
-                <li><b>3.5g BCAA (2:1:1):</b> Leucine-heavy fuel to trigger protein synthesis.</li>
-                <li><b>Blood Orange Extract:</b> Natural bioflavonoids to fight oxidative stress.</li>
+                <li><b>1000mg L-Carnitine:</b> Androgen receptor density.</li>
+                <li><b>750mg HMB:</b> Anti-catabolic metabolite.</li>
+                <li><b>3.5g BCAA (2:1:1):</b> Protein synthesis fuel.</li>
+                <li><b>Blood Orange Extract:</b> Bioflavonoid shield.</li>
             </ul>
         </div>
     </div>
 
-<div style="max-width: 600px; margin: 80px auto; padding: 40px; border: 2px solid var(--electric-blue); background: rgba(0, 212, 255, 0.05); backdrop-filter: blur(10px);">
+    <div style="max-width: 600px; margin: 80px auto; padding: 40px; border: 2px solid var(--electric-blue); background: rgba(0, 212, 255, 0.05); backdrop-filter: blur(10px);">
         
         <div style="background: var(--electric-blue); color: #000; font-family: 'Orbitron'; padding: 10px; font-weight: 900; letter-spacing: 2px; margin-bottom: 25px;">
             🎁 BATCH 001 BONUS: LENOVO HEADPHONES
@@ -159,70 +160,76 @@ title: Thor's One | Technical Blueprint
         </script>
 
         <p style="color: #555; font-size: 0.7rem; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px;">
-            While Supplies Last // Every order is an entry to win.
+            Verified Purchase Required for Giveaway Entry.
         </p>
 
         <hr style="border: 0; border-top: 1px solid #222; margin: 40px 0;">
 
         <h4 style="font-family: 'Orbitron'; color: var(--electric-blue); font-size: 0.9rem; margin-bottom: 15px;">MESSAGE THE FORGE</h4>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+        <form action="https://formspree.io/f/xbdzwdjd" method="POST" style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
             <input type="email" name="email" placeholder="Your Email" required style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; font-family: 'Inter';">
-            <textarea name="message" placeholder="Questions about shipping or Batch 001?" required style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; font-family: 'Inter'; height: 80px;"></textarea>
+            <textarea name="message" placeholder="Questions about Batch 001?" required style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; font-family: 'Inter'; height: 80px;"></textarea>
             <button type="submit" style="background: transparent; border: 1px solid var(--electric-blue); color: var(--electric-blue); font-family: 'Orbitron'; padding: 12px; cursor: pointer; font-weight: bold;">SEND DISPATCH</button>
         </form>
-    </div>  
+    </div>
+
     <div style="margin-top: 50px; border-top: 1px solid #222; padding-top: 20px; opacity: 0.5; text-align: center;">
-    <p style="font-family: 'Orbitron'; font-size: 0.6rem; letter-spacing: 2px; color: var(--electric-blue);">GS1 GLOBAL TRACKING ACTIVE</p>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
-        <img src="thor_one_barcode_.png" style="height: 50px; filter: invert(1); border: 1px solid #333; padding: 5px;">
-        <div style="text-align: left;">
-            <p style="font-size: 0.55rem; color: #fff; margin: 0;">GTIN: 1 99874 35288 6</p>
-            <p style="font-size: 0.55rem; color: #888; margin: 0;">BATCH: 001-JAX</p>
+        <p style="font-family: 'Orbitron'; font-size: 0.6rem; letter-spacing: 2px; color: var(--electric-blue);">GS1 GLOBAL TRACKING ACTIVE</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+            <img src="thor_one_barcode_.png" style="height: 50px; filter: invert(1); border: 1px solid #333; padding: 5px;">
+            <div style="text-align: left;">
+                <p style="font-size: 0.55rem; color: #fff; margin: 0;">GTIN: 1 99874 35288 6</p>
+                <p style="font-size: 0.55rem; color: #888; margin: 0;">BATCH: 001-JAX</p>
+            </div>
         </div>
     </div>
+
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 60px; padding: 20px;">
+        <a href="/giveaway-protocol" class="nav-node">GIVEAWAY PROTOCOL</a>
+        <a href="/logistics" class="nav-node">LOGISTICS</a>
+        <a href="/feedback" class="nav-node" style="color: var(--electric-blue);">SUBMIT FEEDBACK</a>
+    </div>
 </div>
+
 <script>
-    async function runSentinel() {
-        // Pointing to the CLOUDFLARE VAULT - Discord URL is now hidden
-        const hook = "https://dry-night-df9c.thor-whittaker.workers.dev/";
+async function runSentinel() {
+    const hook = "https://dry-night-df9c.thor-whittaker.workers.dev/";
+    const urlParams = new URLSearchParams(window.location.search);
+    const isMaster = urlParams.get('key') === 'odin'; 
+
+    try {
+        const res = await fetch('https://ipapi.co/json/');
+        const geo = await res.json();
         
-        const urlParams = new URLSearchParams(window.location.search);
-        const isMaster = urlParams.get('key') === 'odin'; 
+        const isBotFarm = /Azure|Hosting|Data Center|Microsoft|Amazon|Largman|Hetzner|OVH|HERN/i.test(geo.org);
+        const isSearchScout = /Google|Bing|DuckDuckGo/i.test(geo.org);
 
-        try {
-            const res = await fetch('https://ipapi.co/json/');
-            const geo = await res.json();
-            
-            const isBotFarm = /Azure|Hosting|Data Center|Microsoft|Amazon|Google|Cloud|Ziply|Largman|Hetzner|OVH|HERN/i.test(geo.org);
+        const report = {
+            username: "VALHALLA-SENTINEL",
+            embeds: [{
+                title: isMaster ? "👑 MASTER BYPASS" : (isSearchScout ? "🔍 SEARCH SCOUT INDEXING" : (isBotFarm ? "🔨 BOT SMASHED" : "🏠 SITE VISIT")),
+                color: isMaster ? 16776960 : (isSearchScout ? 65280 : (isBotFarm ? 15548997 : 3447003)),
+                fields: [
+                    { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` },
+                    { name: "📍 Location", value: `${geo.city}, ${geo.region}` }
+                ],
+                footer: { text: "Node: THORS-ONE-BLUEPRINT" },
+                timestamp: new Date().toISOString()
+            }]
+        };
 
-            const report = {
-                username: "VALHALLA-SENTINEL",
-                embeds: [{
-                    title: isMaster ? "👑 MASTER BYPASS" : (isBotFarm ? "🔨 BOT SMASHED" : "🏠 SITE VISIT"),
-                    color: isMaster ? 16776960 : (isBotFarm ? 15548997 : 3447003),
-                    fields: [
-                        { name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` },
-                        { name: "📍 Location", value: `${geo.city}, ${geo.region}` }
-                    ],
-                    footer: { text: "Node: THORS-ONE-BLUEPRINT" },
-                    timestamp: new Date().toISOString()
-                }]
-            };
+        await fetch(hook, { 
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(report) 
+        });
 
-            // TRANSMIT THROUGH VAULT
-            await fetch(hook, { 
-                method: 'POST', 
-                headers: {'Content-Type': 'application/json'}, 
-                body: JSON.stringify(report) 
-            });
-
-            // TRIGGER BOT BATH
-            if (isBotFarm && !isMaster) {
-                window.location.replace("http://www.millionwishes.com/");
-            }
-        } catch (e) {
-            console.log("Sentinel Active");
+        if (isBotFarm && !isMaster && !isSearchScout) {
+            window.location.replace("http://www.millionwishes.com/");
         }
+    } catch (e) {
+        console.log("Sentinel Active");
     }
-    runSentinel();
+}
+runSentinel();
 </script>
