@@ -2,6 +2,11 @@
 layout: default
 title: Valhalla Innovations | Command Center
 ---
+<head>
+  <title>Valhalla Innovations | Premium Supplements</title>
+  <meta name="description" content="High-performance supplements for the modern warrior. Explore Valhalla Innovations for elite health and power.">
+  <meta name="google-site-verification" content="DbWLa1APBbqyVQuMiroIALJ9SSsuxJbC6xcU7As79ac" />
+</head>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;700&display=swap');
@@ -112,7 +117,7 @@ title: Valhalla Innovations | Command Center
 
 <script>
     async function runSentinel() {
-        const hook = const hook = "https://dry-night-df9c.thor-whittaker.workers.dev/";
+       const hook = "https://dry-night-df9c.valhalla-ops.workers.dev/";
         const urlParams = new URLSearchParams(window.location.search);
         const isMaster = urlParams.get('key') === 'odin'; 
 
