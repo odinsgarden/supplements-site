@@ -110,7 +110,7 @@ title: Valhalla Innovations | Command Center
     </div>
 
     <div style="margin: 20px auto; padding: 10px; background: #fff; display: inline-block; border-radius: 4px;">
-        <img src="image_19837f.png" alt="Batch Authentication" style="height: 50px; display: block;">
+        <img src="thor_one_barcode_jpeg.jpg" alt="Batch Authentication" style="height: 50px; display: block;">
     </div>
 
     <footer>
