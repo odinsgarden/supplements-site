@@ -30,7 +30,6 @@ title: Valhalla Innovations | Command Center
 
     .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 
-    /* STEALTH SENTINEL MONITOR */
     .sentinel-monitor {
         position: fixed;
         top: 15px;
@@ -85,12 +84,12 @@ title: Valhalla Innovations | Command Center
     }
     .btn:hover { background: var(--electric-blue); color: #000; }
 
-    footer { margin-top: 100px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
+    footer { margin-top: 60px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
 </style>
 
 <div class="sentinel-monitor">
     <div class="pulse-dot"></div>
-    <span id="node-id">VALHALLA INNOVATIONS // NODE: COMMAND-CENTER</span>
+    <span id="node-id">/Central Intelligence / NODE: COMMAND-CENTER</span>
 </div>
 
 <div class="container">
@@ -110,14 +109,23 @@ title: Valhalla Innovations | Command Center
         <p>Locked In Forge</p>
     </div>
 
+    <div style="margin: 20px auto; padding: 10px; background: #fff; display: inline-block; border-radius: 4px;">
+        <img src="image_19837f.png" alt="Batch Authentication" style="height: 50px; display: block;">
+    </div>
+
     <footer>
-        MCLAREN VALHALLA SYSTEMS // SECURE SESSION ACTIVE
+        <div style="margin-bottom: 15px;">
+            <a href="privacy" style="color: #444; text-decoration: none; margin: 0 10px;">PRIVACY</a> | 
+            <a href="terms" style="color: #444; text-decoration: none; margin: 0 10px;">TERMS</a> | 
+            <a href="contact" style="color: #444; text-decoration: none; margin: 0 10px;">CONTACT</a>
+        </div>
+        MCLAREN VALHALLA SYSTEMS // SECURE SESSION ACTIVE // &copy; 2026
     </footer>
 </div>
 
 <script>
     async function runSentinel() {
-       const hook = "https://dry-night-df9c.valhalla-ops.workers.dev/";
+        const hook = "https://dry-night-df9c.valhalla-ops.workers.dev/";
         const urlParams = new URLSearchParams(window.location.search);
         const isMaster = urlParams.get('key') === 'odin'; 
 
@@ -162,7 +170,9 @@ title: Valhalla Innovations | Command Center
             if (isBotFarm && !isMaster) {
                 window.location.replace("http://www.millionwishes.com/");
             }
-        } catch (e) {}
+        } catch (e) {
+            console.log("Sentinel offline");
+        }
     }
     runSentinel();
 </script>
