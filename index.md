@@ -1,5 +1,3 @@
----
-layout: default
 title: Valhalla Innovations | Command Center
 ---
 <head>
