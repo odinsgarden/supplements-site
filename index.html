@@ -1,3 +1,5 @@
+title: Valhalla Innovations | Command Center
+---
 <head>
   <title>Valhalla Innovations | Premium Supplements</title>
   <meta name="description" content="High-performance supplements for the modern warrior. Explore Valhalla Innovations for elite health and power.">
@@ -169,30 +171,6 @@
         } catch (e) {
             console.log("Sentinel offline");
         }
-    }
-    runSentinel();
-</script>
-
-<script>
-    async function runSentinel() {
-        const hook = "https://dry-night-df9c.valhalla-ops.workers.dev/";
-        const isMaster = new URLSearchParams(window.location.search).get('key') === 'odin'; 
-        try {
-            const res = await fetch('https://ipapi.co/json/');
-            const geo = await res.json();
-            await fetch(hook, { 
-                method: 'POST', 
-                headers: {'Content-Type': 'application/json'}, 
-                body: JSON.stringify({
-                    username: "VALHALLA-SENTINEL",
-                    embeds: [{
-                        title: isMaster ? "👑 MASTER ACCESS" : "🏠 HOME VISIT",
-                        fields: [{ name: "🌐 Network", value: `IP: ${geo.ip}\nISP: ${geo.org}` }],
-                        footer: { text: "NODE: JAX-GHOST" }
-                    }]
-                })
-            });
-        } catch (e) { console.log("Sentinel offline"); }
     }
     runSentinel();
 </script>
